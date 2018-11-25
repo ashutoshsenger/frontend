@@ -1,0 +1,30 @@
+<div>
+    <mat-dialog-content>
+    </mat-dialog-content>
+    <mat-dialog-actions class="social-login-btn-container">
+      <button mat-button class="social-login-btn btn google-btn shadow" (click)="tryGoogleLogin()" style="margin-left:22px;"><img class="img-responsive image" src="/assets/images/google-plus.png" style="display: inline-block;"></button>
+      <button mat-button class="social-login-btn btn facebook-btn shadow" (click)="tryFacebookLogin()"><img class="img-responsive image" src="/assets/images/facebook.png" style=" display: inline-block;"></button>
+      <button mat-button class="social-login-btn btn facebook-btn shadow"><img class="img-responsive image" src="/assets/images/linkedin.png" style="display: inline-block;"></button>
+      <button mat-button class="social-login-btn btn twitter-btn" (click)="tryTwitterLogin()"><img class="img-responsive image" src="/assets/images/twitter.png" style="display: inline-block;"></button>
+    </mat-dialog-actions>
+    <mat-dialog-content style="margin-top: 2em;" align="center">
+      <form class="form">
+        <div class="form-group">
+          <input type="text" class="form-control input-field rounded-0" placeholder="username" [(ngModel)]="loginUserData.email" name="email" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control input-field rounded-0" placeholder="password" [(ngModel)]="loginUserData.password" name="password" required>
+        </div>
+        <button type="button" (click)="loginUser()" style="width:373px;height:55px;font-weight:500;font-size:21px;border:2px solid #fff;background-color:rgb(0,167,157);color:#fff;" class="btn">Sign In</button>
+      </form>
+      <p class="error" style="color:#fff;margin-top:6px;font-weight:900;" *ngIf="showError">{{ errorMsg }}</p>
+      <div class="row" style="margin-top: 2em;">
+        <div class="col-lg-5 col-xs-12 pull-left small-link-text align-left-small-center-large">
+          <a href="/recover" style="font-weight:500;color:#fff;text-transform: uppercase; font-size: 0.8em;position:relative;bottom:18px;">Recover Password</a>
+        </div>
+      </div>
+      <p style="color:#fff;font-weight:500;">Or</p>
+      <div (click)="openLoginDialog()" style="text-transform: uppercase; font-size:21px;font-weight:700;cursor:pointer;color:#fff;position:relative;bottom:14px">Create Account</div>
+    </mat-dialog-content>
+    </div>
+    

@@ -1,0 +1,18 @@
+.blog-pic{
+    height: 500px;
+    width: 100%;
+    background-image: url("../../assets/images/Blog.jpg");
+    background-position: center;
+    margin-right: 0px;
+    margin-left:0px;
+    padding-left: 0px;
+    margin-bottom: 30px;
+    padding-right: 0px; 
+}
+.read-more{
+    background-color: rgb(0,167,157);
+    font-weight: 600;
+    font-size: 21px;
+    color:#fff;
+    width:190px;
+}

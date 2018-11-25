@@ -1,0 +1,54 @@
+.blog-pic{
+    height: 500px;
+    width: 100%;
+    background-image: url("../../../assets/images/Blog.jpg");
+    background-position: center;
+    margin-right: 0px;
+    margin-left:0px;
+    padding-left: 0px;
+    margin-bottom: 30px;
+    padding-right: 0px; 
+}
+.head-div{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.content-pic{
+    background-image: url("../../../assets/images/cofee.jpg");
+    background-position: center;
+    width: 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 300px;
+    margin-bottom: 15px;
+
+}
+.social-div{
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: px;
+    padding-left: 0px;
+
+}
+.social-button{
+    width: 100%;background: none;
+    border: none;
+    width: 155px;
+    height: 38px;
+    font-size:13px;
+    font-weight:700;
+    color:#fff;
+    cursor: pointer;   
+}
+.read-btn{
+    background-color: rgb(0,167,157);
+    color: #fff;
+    font-weight: 700;
+    width: 280px;
+    height: 42px;
+    font-size: 23px;
+    border: none;
+    border-radius: 27px;
+}

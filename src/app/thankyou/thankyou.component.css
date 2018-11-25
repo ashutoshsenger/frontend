@@ -1,0 +1,19 @@
+.wrapper{
+
+   background-image: url("../../assets/images/product/main_banner.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   margin-right: 0px;
+    margin-left:0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 55px;
+    padding-bottom: 55px;
+    padding-top: 110px;
+    
+}
+span{
+    color:rgb(0,167,157);font-size:22px;
+    font-weight:800;
+}

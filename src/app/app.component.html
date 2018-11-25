@@ -1,0 +1,134 @@
+<!-- /*
+ * @Author: pulkit.kr191@gmail.com
+ * @Last Modified by: pulkit kumar
+ */ -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-transparent" style="height:54px;background-color: white !important; opacity: 0.92 !important; padding: 0; padding-left: 2em;">
+  <a class="navbar-brand" routerLink="/">
+    <img src="assets/images/logo.png" style="max-height: 3em; margin-left: 60%" class="img-responsive"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav" style="height:55px;">
+    <ul class="navbar-nav ml-auto" style="height:100%;">
+      
+        <li class="nav-item px-3 head-link">
+            <a class="nav-link"  style="color: #1b75bb;font-weight:600;" aria-controls="navbarNav" href="/homepage">HOME</a>
+          </li>
+        <li class="nav-item px-3 head-link">
+            <a class="nav-link"  style="color: #1b75bb;font-weight:600;" aria-controls="navbarNav" href="/about">ABOUT US</a>
+          </li>
+        <li class="nav-item px-3 head-link">
+            <a class="nav-link" style="color: #1b75bb;font-weight:600;cursor:pointer;" aria-controls="navbarNav" (click)="openProductDialog()">PRODUCTS</a>
+          </li>
+      <li class="nav-item px-3 head-link">
+        <a class="nav-link"  style="color: #1b75bb;font-weight:600;" aria-controls="navbarNav" href="/blogs">BLOG</a>
+      </li>
+      <!-- <li class="nav-item px-3">
+        <a class="nav-link" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" href="/support">Support</a>
+      </li> -->
+      <li class="nav-item head-link" *ngIf="!authService.loggedIn()">
+        <a class="nav-link" style="color: #1b75bb;cursor:pointer;font-weight:600;" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" (click)="openLoginDialog()">LOGIN/REGISTER</a>
+      </li>
+
+
+        <li class="nav-item head-link" *ngIf="authService.loggedIn()">
+        <a class="nav-link" style="color: #1b75bb;cursor:pointer;font-weight:600;" routerLink="/profile">PROFILE</a>
+      </li>
+
+      <li class="nav-item head-link dropdown" *ngIf="authService.loggedIn()">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#" (click)="authService.logoutUser()">Logout</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+<footer id="footer">
+
+  <div class="row">
+    <div class="col-md-5" style="padding-right: 45px;padding-left:40px;">
+
+      <div class="row" style="margin-bottom:20px;" >
+        <h5 style="color:rgb(0,167,157);font-weight:800;">ABOUT US</h5>
+        <p style="color:#fff;">Our dedicated team comprises career counsellors who have
+          experiences in a wide range of fields, industries, MNCs, startups,
+          having a common vision to guide, mentor and work closely with you
+          to  build your career. Also, we help to  explore new career options
+          that are in demand and cater to your interest</p>
+      </div>
+
+      <div class="row">
+        <div style="width:100%;"><h5 style="color:rgb(0,167,157);font-weight:800;">SOCIAL</h5></div>
+          <div>
+              <ul style="padding-left:0px;">
+                  <li><a href="https://www.linkedin.com/company/careernaksha"><i style="color:rgb(0,167,157);font-size:17px;" class="fab fa-linkedin-in"></i></a></li>
+                  <li><a href="https://www.facebook.com/careernaksha"><i style="color:rgb(0,167,157);font-size:17px;" class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="https://twitter.com/careernaksha"><i style="color:rgb(0,167,157);font-size:17px;" class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/careernaksha"><i style="color:rgb(0,167,157);font-size:17px;" class="fab fa-instagram"></i></a></li>
+                  <li><a href="https://plus.google.com/107779926432532044968"><i style="color:rgb(0,167,157);font-size:17px;" class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+          </div>
+         
+        </div>
+
+    </div>
+    <div class="col-md-3">
+ 
+        <div class="row">
+          <h5 style="color:rgb(0,167,157);font-weight:800;">CONTACT US</h5>
+        </div>
+
+        <div class="row">
+
+          <div class="md-col-12"><p style="color:#fff"><i class="fa fa-phone" style="font-size:19px;color:rgb(0,167,157);margin-top:5px;"></i>  0-123769-8976</p></div>
+          <div class="md-col-12"><p style="color:#fff;"><i class="fa fa-envelope" style="color:rgb(0,167,157);"></i>Support@Careernaksha.com</p></div>
+         
+         
+        </div>
+
+
+          <div class="row" style="margin-bottom:10px;">
+              <textarea [(ngModel)]="sendContact.email" style="padding:8px;border:2px solid rgb(0,167,157);;background:none;width:100%;margin-bottom:6px;resize:none;height:40px;" placeholder="E-mail"  name="email" id="email"></textarea>
+              <textarea [(ngModel)]="sendContact.phone" style="padding:8px;border:2px solid rgb(0,167,157);;background:none;width:100%;margin-bottom:6px;resize:none;height:40px;" placeholder="Phone Numbeer" name="phone" id="phone"></textarea>
+            </div>
+          <div class="row">
+              <textarea [(ngModel)]="sendContact.message" style="padding:8px;border:2px solid rgb(0,167,157);background:none;width:100%;resize:none;height:120px;" name="message" id="message" placeholder="Message for us."></textarea>
+              <button (click)="sendContactForm(); showmessage()" style="background-color:rgb(0,167,157);color:#fff;border:none;width:100px;height:31px;border-radius:2px;font-weight:600;margin-top:10px;">SEND</button>
+         </div>
+         <div class="row" style="padding-top:20px;">
+           <div *ngIf="thankmessage" style="width:330px;height:50px;background-color:rgb(0,167,157);text-align:center;padding-top:6px;">
+             <p style="color:#fff;font-weight:500;">"Thank you we will shortly be in touch!"</p>     
+           </div>
+         </div>
+    </div>
+
+
+    <div class="col md-4" style="padding-left:80px;">
+ 
+       <div style="text-align:center;"><h5 style="color:rgb(0,167,157);font-weight:800;">LATEST BLOG ARTICLES</h5></div>
+       <div style="padding-bottom:8px;border-bottom: 2px solid rgb(0,167,157);margin-bottom:25px;margin-right:10px;color:#fff; font-family:'Raleway',sans-serif ;" class="row"><p class="footer-para">Exam stress and anxiety is a common problem these days among students and candidates preparing for exams. It can be handled through proper guidance and counselling.</p> </div>
+       <div  style="padding-bottom:8px;border-bottom: 2px solid rgb(0,167,157);margin-bottom:25px;margin-right:10px;color:#fff; font-family:'Raleway',sans-serif ;" class="row"><p class="footer-para">Career counselling is the need of the hour in India. Parents and students are still not aware of new career options emerging and the career option that best fits according to the interest of the student.</p></div>
+       <div style="text-align:center;">
+         <a href="/blogs"> <button style="background-color:rgb(0,167,157);color:#fff;border:none;width:152px;height:39px;border-radius:2px;font-weight:600;">MORE ARTICLES</button></a>
+       </div>
+      
+
+
+
+    </div>
+  </div>
+
+</footer>
+
+
